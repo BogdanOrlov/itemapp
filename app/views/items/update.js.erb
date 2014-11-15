@@ -1,0 +1,7 @@
+$('#new_item').remove();
+<% if @item.errors.any? %>
+$('table').before('<%=j render('errors',:item=>@item) %>');
+<% else %>
+$('#edit_item_<%=@item.id %>').replaceWith('<%=j render('item',:item=>@item) %>')
+$('#error_explanation').remove();
+<% end %>

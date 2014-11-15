@@ -1,0 +1,8 @@
+$('#new_item').remove();
+$('#new_item_link').show();
+<% if @item.errors.any? %>
+$('table').before('<%=j render('errors',:item=>@item) %>');
+<% else %>
+$('table tbody').append('<%=j render('item',:item=>@item) %>');
+$('#error_explanation').remove();
+<% end %>

@@ -1,0 +1,7 @@
+    <tr id="edit_item_<%=item.id %>" >
+      <td><%= item.name %></td>
+      <td><%= image_tag item.picture.url(:mini) %></td>
+      <td><%= link_to 'Редактировать', edit_item_path(item),remote: true %></td>
+      <td><%= link_to 'Удалить', item, method: :delete,remote: true %></td>
+    </tr>
+

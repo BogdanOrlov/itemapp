@@ -1,0 +1,20 @@
+<%= form_for(@item, remote:true) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+      <ul>
+      <% @item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class="table">
+    <tr>
+      <td><%= f.text_field :name,placeholder: "Название" %></td>
+      <td><%= f.file_field :picture %></td>
+      <td><%= f.submit 'Сохранить'%></td>
+    </tr>
+  </table>
+<% end %>

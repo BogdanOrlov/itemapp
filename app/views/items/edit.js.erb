@@ -1,0 +1,5 @@
+if ($("table #new_item").length > 0) {
+    $('table #new_item').replaceWith('<tr id="new_item"><td colspan=3><%=j render('form') %></td></tr>')
+} else {
+    $('#edit_item_<%=@item.id %>').after('<tr id="new_item"><td colspan=3><%=j render('form') %></td></tr>')
+}
